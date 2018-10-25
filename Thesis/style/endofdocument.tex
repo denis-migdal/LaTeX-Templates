@@ -1,0 +1,59 @@
+\newcommand{\keywords}[1]{
+    \def \keywordslist {#1}
+}
+
+\newcommand{\ensummary}[1]{
+    \def \englishsummary {#1}
+}
+
+\newcommand{\frsummary}[1]{
+    \def \frenchsummary {#1}
+}
+
+\newcommand{\bibpath}[1]{
+	\def \biblpath {#1}	
+}
+
+\AtEndDocument{
+
+    \bibliographystyle{plain}
+    \bibliography{\biblpath}
+    
+    %TODO Appendix
+    
+    %TODO https://tex.stackexchange.com/questions/100354/list-of-abbreviations
+    
+    \newpage
+    \listoffigures
+    \newpage
+    \listoftables
+    
+    %TODO 4eme de couverture
+    
+    \cleardoublepage
+    \thispagestyle{empty}
+    \mbox{~}
+    \clearpage
+    \thispagestyle{empty}
+    
+    \newcommand{\hrulesp}[2]{
+        \vspace{#1}
+        \hrule
+        \vspace{#2}
+    }
+    
+    
+    
+    \vfill
+    \hrulesp{0px}{20px}
+        \englishsummary
+    \hrulesp{30px}{20px}
+        \frenchsummary
+    \vfill
+    \hrulesp{0px}{7px}
+    \noindent
+    \textbf{Keywords:} \MakeUppercase{\keywordslist}
+    \hrulesp{10px}{7px}
+    \noindent
+    \textit{ENSICAEN - UNICAEN - CNRS - GREYC UMR 6072, F-14050 Caen, France}
+}

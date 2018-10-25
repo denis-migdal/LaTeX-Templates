@@ -1,0 +1,13 @@
+\setsecnumdepth{subsection}
+\maxsecnumdepth{subsection}
+\settocdepth{subsection}
+\maxtocdepth{subsection}
+
+\newcommand{\toc}{
+    \cleardoublepage
+    \begin{KeepFromToc}
+    \tableofcontents
+    \end{KeepFromToc}
+    \cleardoublepage
+    \mainmatter
+}

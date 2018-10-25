@@ -1,0 +1,11 @@
+\newcommand{\coverpage}[1]{
+    \def \coverpagepath {#1}
+}
+
+\usepackage{pdfpages}
+\AtBeginDocument{
+    \frontmatter
+    \includepdf{\coverpagepath}
+    \cleardoublepage
+    \maketitle
+}

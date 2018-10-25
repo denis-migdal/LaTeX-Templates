@@ -1,0 +1,185 @@
+% *************** Document de style ***************
+
+% *************** chargement des packages ***************
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+\usepackage{lmodern} % Required for specifying colors by name
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage[numbers]{natbib}
+
+\usepackage{tabularx}
+
+%To make clear definition
+\newtheorem{quickDef}{Definition}
+\newtheorem{rmq}{Remark}
+
+%This package permits to use vectorial font (acrobat reader compatibility)
+\usepackage[cyr]{aeguill}
+
+
+
+% paquets pour tableaux, figures...
+\usepackage[dvipsnames,table,hyperref]{xcolor}
+%\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{multirow}
+
+% pour avoir des paragraphes justifi�s correctement
+\usepackage{microtype} 
+
+% pour faire des "cholies" figures
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations,backgrounds,shapes}
+
+\usepackage{ifpdf}
+
+% pour citer des adresses web
+\usepackage{url}
+
+% a changer suivant la version (d�finitive ou pour relecture ^^)
+\def\baselinestretch{1.2} % simple interligne
+%\def\baselinestretch{1.56}  % double interligne
+
+% comme con nom l'indique
+\fixpdflayout
+
+% pour utiliser des lettrines (premiere lettre en grand ^^)
+\usepackage{lettrine}
+\newcommand{\malettrine}[2]{\lettrine[lines=2, lhang=0.33, loversize=0.25]{#1}{#2}} % format de la lettrine
+\renewcommand{\LettrineFontHook}{\color [gray]{0.5}} % couleur de la lettrine
+
+% *************** Permet d'ajouter la page des citations dans la biblio ***************
+%usepackage{citeref}
+%\renewcommand{\bibitempages}[1]{\newblock {\scriptsize [\mbox{cité p.\ }#1]}}
+
+
+\usepackage{todonotes}
+
+
+%pour corriger des incompatibilit�s entre 'm�moire' et 'hyperref'
+\usepackage{memhfixc}
+
+
+% *************** Autre ***************
+% divers...
+
+% un style de list personalis�...
+\newenvironment{malist}
+{ \begin{list}%
+    {$\bullet$}%
+    {\setlength{\labelwidth}{30pt}%
+     \setlength{\leftmargin}{35pt}%
+     \setlength{\itemsep}{\parsep}}}%
+{ \end{list} }
+
+% je ne sais plus pourquoi... pour corriger une erreur...
+\newsubfloat{figure}
+
+% \bf non g�r� par 'memoire', donc...
+\renewcommand{\bf}{\textbf}
+
+% pour avoir des guillements francais bien g�r�
+\renewcommand{\og}{\og\xspace} % ouverture 
+\renewcommand{\fg}{\fg\xspace} % fermeture
+
+% pour faire des note (avec paquets todonotes), suffit de faire \note{sjhfjshfhfjh} pour que ca s'affiche sur fond vert clair
+\newcommand{\note}[1]{\todo[inline,color=green!40]{#1}}
+
+% raccourcie, pour citer Truc \etal 
+\newcommand{\etal}{\emph{et coll.}\xspace} % et en francais, c'est et coll., pas et al.
+
+% pour changer l'affiche des titres des figures
+\makeatletter
+\renewcommand{\fnum@figure}[1]{\figurename~\thefigure~-- \sffamily}
+\makeatother
+
+\usepackage[plainpages=false,pdfpagelabels,bookmarksnumbered, %
+        colorlinks=true, % impression -> false // en ligne -> true % important pour le nombre de page couleur ! ca coute chere !
+        linkcolor=Sepia, %
+        citecolor=Sepia, %
+        filecolor=Maroon, %
+        urlcolor=Blue, %
+        pdftex, %
+        unicode, %
+        backref=page]{hyperref} 
+
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+    \ifcase #1 [Non cité.]%
+    \or        [Cité~page~#2.]%
+    \else      [Cité~pages~#2.]%
+    \fi}
+
+
+\renewcommand*{\backreftwosep}{ et~}
+\renewcommand*{\backreflastsep}{, et~}
+
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\usepackage{tabularx}
+\usepackage{amssymb}
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\newcommand{\mcrot}[4]{\multicolumn{#1}{#2}{\rlap{\rotatebox{#3}{#4}~}}}
+
+%\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pdflscape}
+
+\usepackage[Algorithme]{algorithm}
+
+\renewcommand{\algorithmicrequire}{\textbf{Require:}}
+\renewcommand{\algorithmicensure}{\textbf{Ensure:}}
+\renewcommand{\algorithmiccomment}[1]{\{#1\}}
+\renewcommand{\algorithmicend}{\textbf{fin}}
+\renewcommand{\algorithmicif}{\textbf{si}}
+\renewcommand{\algorithmicthen}{\textbf{alors}}
+\renewcommand{\algorithmicelse}{\textbf{sinon}}
+\renewcommand{\algorithmicfor}{\textbf{pour}}
+\renewcommand{\algorithmicforall}{\textbf{pour tous}}
+\renewcommand{\algorithmicdo}{\textbf{faire}}
+\renewcommand{\algorithmicwhile}{\textbf{while}}
+
+% *************** Fin du style ***************
+
+
+%\usepackage{gensymb}
+%\usepackage{pdfpages}
+%Author date and title
+%\author{Julien Hatin}
+%\date{10-12-2014}
+
+%Bibliography style
+%\bibliographystyle{plainnat-fr}
+%\usepackage{bibentry}
+
+%\usepackage{afterpage}
+
+%\newcommand\blankpage{%
+%    \null
+%    \thispagestyle{empty}%
+%    \addtocounter{page}{-1}%
+%    \newpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[utf8]{inputenc}
+%\usepackage{geometry}
+%\usepackage{hyperref}
+%\usepackage{multirow}
+%\usepackage{calrsfs} % fancy \mathcal
+%\geometry{hmargin=1.5cm,vmargin=1.5cm}%v=1.5 - h=2.5
+
+%\input{src/commands/thm.tex}
+%\input{src/commands/notes.tex}
+%\input{src/commands/compresslist.tex}
+%\input{src/commands/notableentry.tex}

@@ -1,0 +1,63 @@
+% voir la ref du 'memoire' pour plus d'info
+% permet de changer le style des titre de chapitre, section, paragraphes...
+
+\chapterstyle{bianchi}
+
+\setsecheadstyle{\Large\sffamily\bfseries}
+\setsubsecheadstyle{\large\sffamily\bfseries}
+\setsubsubsecheadstyle{\normalfont\sffamily\bfseries}
+\setparaheadstyle{\normalfont\sffamily}
+
+
+\makeevenhead{headings}{\thepage}{}{\small\slshape\leftmark}
+\makeoddhead{headings}{\small\slshape\rightmark}{}{\thepage}
+
+
+\setafterparaskip{1ex plus .5ex}
+
+%%%%%%%%%%% MINI TABLE OF CONTENT %%%%%%%%%%%
+% Rq Replace minitoc (incompatible with memoir)
+
+\usepackage{titletoc}
+\usepackage{titlesec}
+
+\newcommand\partialtocname{Contents}
+\newcommand\ToCrule{\noindent\rule[5pt]{\textwidth}{1.3pt}}
+\newcommand\ToCtitle{{\large\bfseries\partialtocname}\vskip2pt\ToCrule}
+\makeatletter
+\newcommand\Mprintcontents{%
+  \ToCtitle
+  \ttl@printlist[chapters]{toc}{}{1}{}\par\nobreak
+  \ToCrule}
+\makeatother
+
+\newcommand{\chaptertoc}{
+    \startcontents[chapters]
+    \Mprintcontents
+}
+    
+%%%%%%%%%%% CHAPTER ABSTRACT %%%%%%%%%%%
+% gestion de la commande epigraph
+\setlength{\epigraphwidth}{0.87\textwidth}
+\setlength{\epigraphrule}{0pt}
+\setlength{\beforeepigraphskip}{1\baselineskip}
+\setlength{\afterepigraphskip}{0\baselineskip}
+
+\newcommand{\epitext}{\raggedleft\sffamily\itshape}
+\newcommand{\epiauthor}{\sffamily\scshape ---~}
+\newcommand{\epititle}{\sffamily\itshape}
+\newcommand{\epidate}{\sffamily\scshape}
+\newcommand{\episkip}{\medskip}
+
+\newcommand{\myepigraph}[4]{%
+	\epigraph{\epitext \raggedleft #1\episkip}{\epiauthor #2\\\epititle #3 \epidate(#4)}\noindent}
+
+
+\NewEnviron{chapterabstract}{
+    \epigraph{\parbox{\linewidth}{\emph{\BODY}}}{}{}
+}
+
+\newcommand{\chapterstar}[1]{
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}
+}
