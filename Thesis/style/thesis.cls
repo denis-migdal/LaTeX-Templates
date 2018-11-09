@@ -11,6 +11,7 @@
 \input{style/chapter.tex}
 \input{style/beginofdocument.tex}
 \input{style/endofdocument.tex}
+\input{style/resume.tex}
 
 \usepackage{memhfixc} % fix incompatibility hyperref+memoir
 \usepackage{hyperref} % hyperref must be AFTER chapter (titletoc)

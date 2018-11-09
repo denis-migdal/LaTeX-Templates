@@ -14,6 +14,7 @@ Spécial commands:
 * \ensummary{text}: the thesis' english summary.
 * \frsummary{text}: the thesis' french summary.
 * \bibpath{bib_path}: the path to the .bib document to use for the bibliography.
+* \resume{text}: the resume of a section
 
 
 D'autres exemples de rapports d'avancement de recherche:
